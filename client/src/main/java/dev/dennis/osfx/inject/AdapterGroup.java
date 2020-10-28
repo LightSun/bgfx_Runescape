@@ -36,6 +36,7 @@ public class AdapterGroup {
         clientTypeHierarchyReader.setClasses(classes);
         List<String> classesToWrite = new ArrayList<>();
         for (Map.Entry<String, ClassVisitor> adapterEntry : adapters.entrySet()) {
+            //adapter  注册的class
             String className = adapterEntry.getKey();
             ClassVisitor adapter = adapterEntry.getValue();
             ClassWriter writer = writers.get(className);
@@ -51,6 +52,7 @@ public class AdapterGroup {
 
             classesToWrite.add(className);
         }
+        //给每个class重新生成新的代码 (注入后的)
         for (String className : classesToWrite) {
             classes.put(className, writers.get(className).toByteArray());
         }

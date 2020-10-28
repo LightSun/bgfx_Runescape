@@ -7,7 +7,7 @@ public class StaticFieldHook {
 
     private final String desc;
 
-    private final Number multiplier;
+    private final Number multiplier; //定义字段值需要2个相乘时
 
     public StaticFieldHook(String owner, String name, String desc) {
         this(owner, name, desc, null);

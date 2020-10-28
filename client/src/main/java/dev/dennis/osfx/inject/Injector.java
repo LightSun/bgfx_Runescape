@@ -54,7 +54,7 @@ public class Injector {
             throw new IllegalArgumentException(mixinClass.getName() + " is not a Mixin Class");
         }
         Mixin mixin = mixinClass.getAnnotation(Mixin.class);
-
+        //将json配置的hook 绑定到mixin对应的
         ClassHook classHook = hooks.getClassHook(mixin.value());
         if (classHook == null) {
             throw new IllegalStateException("No class hook found for " + mixin.value());
@@ -340,7 +340,7 @@ public class Injector {
         Type gameEngineType = Type.getObjectType(gameEngineHook.getName());
 
         Map<String, byte[]> classes = new HashMap<>();
-
+        //将input 的jar的每个类加入 classes (map)
         for (JarEntry entry : Collections.list(jarFile.entries())) {
             String entryName = entry.getName();
             if (entryName.endsWith(".class")) {
