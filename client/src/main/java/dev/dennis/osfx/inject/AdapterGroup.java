@@ -45,7 +45,9 @@ public class AdapterGroup {
             }
             byte[] classData = classes.get(className);
             if (classData == null) {
-                throw new IllegalStateException(className + " Class not found");
+                System.err.println(className + " Class not found");
+                //throw new IllegalStateException(className + " Class not found");'
+                continue;
             }
             ClassReader classReader = new ClassReader(classData);
             classReader.accept(adapter, ClassReader.EXPAND_FRAMES);

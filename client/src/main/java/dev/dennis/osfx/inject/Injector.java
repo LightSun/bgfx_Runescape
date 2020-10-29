@@ -5,13 +5,12 @@ import dev.dennis.osfx.inject.adapter.*;
 import dev.dennis.osfx.inject.hook.*;
 import dev.dennis.osfx.inject.mixin.*;
 import dev.dennis.osfx.util.MathUtil;
+import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Type;
 import org.reflections.Reflections;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -373,6 +372,55 @@ public class Injector {
                 jarOut.write(classEntry.getValue());
                 jarOut.closeEntry();
             }
+        }
+    }
+    //------------------ heaven7 ----------------
+    //h7 test
+    public void inject(String className, Path outputPath){
+        Map<String, byte[]> classes = new HashMap<>();
+        ClassReader reader = null;
+        try {
+            reader = new ClassReader(className);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+//TODO test game engine
+      /*  ClassHook gameEngineHook = hooks.getClassHook(GAME_ENGINE_HOOK_NAME);
+        if (gameEngineHook == null) {
+            throw new IllegalStateException(GAME_ENGINE_HOOK_NAME + " hook required");
+        }
+        Type gameEngineType = Type.getObjectType(gameEngineHook.getName());
+        AdapterGroup appletToPanelGroup = new AdapterGroup();
+        for (String cn : classes.keySet()) {
+            appletToPanelGroup.addAdapter(cn, delegate -> new AppletToPanelAdapter(delegate, gameEngineType));
+        }*/
+        List<AdapterGroup> adapterGroups = Arrays.asList(
+                //appletToPanelGroup,
+                preCopyAdapterGroup,
+                copyAdapterGroup,
+                postCopyAdapterGroup
+        );
+
+        classes.put(className, reader.b);
+        for (AdapterGroup group : adapterGroups) {
+            group.apply(classes);
+        }
+
+        try {
+            FileOutputStream outputStream = new FileOutputStream(outputPath.toFile());
+            try (JarOutputStream jarOut = new JarOutputStream(outputStream, new Manifest())) {
+                for (Map.Entry<String, byte[]> classEntry : classes.entrySet()) {
+                    String className2 = classEntry.getKey();
+                    JarEntry newEntry = new JarEntry(className2 + ".class");
+                    jarOut.putNextEntry(newEntry);
+                    jarOut.write(classEntry.getValue());
+                    jarOut.closeEntry();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
         }
     }
 }

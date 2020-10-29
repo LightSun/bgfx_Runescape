@@ -1,0 +1,641 @@
+{
+  "statics": {
+    "fields": {
+      "client": {
+        "owner": "gg",
+        "name": "am",
+        "desc": "Lclient;"
+      },
+      "bufferProvider": {
+        "owner": "ju",
+        "name": "ac",
+        "desc": "Llk;"
+      },
+      "gameDrawingMode": {
+        "owner": "client",
+        "name": "ou",
+        "desc": "I",
+        "multiplier": -2063650301
+      },
+      "cameraPitch": {
+        "owner": "dz",
+        "name": "hb",
+        "desc": "I",
+        "multiplier": -1167251555
+      },
+      "cameraYaw": {
+        "owner": "j",
+        "name": "hs",
+        "desc": "I",
+        "multiplier": 1779595595
+      },
+      "cameraZoom": {
+        "owner": "client",
+        "name": "rk",
+        "desc": "I",
+        "multiplier": -1174260245
+      },
+      "cameraX": {
+        "owner": "gt",
+        "name": "hx",
+        "desc": "I",
+        "multiplier": -1785627297
+      },
+      "cameraY": {
+        "owner": "eg",
+        "name": "hg",
+        "desc": "I",
+        "multiplier": -864409125
+      },
+      "cameraZ": {
+        "owner": "by",
+        "name": "ha",
+        "desc": "I",
+        "multiplier": -1555429919
+      },
+      "scissorX": {
+        "owner": "lj",
+        "name": "ah",
+        "desc": "I"
+      },
+      "scissorY": {
+        "owner": "lj",
+        "name": "ak",
+        "desc": "I"
+      },
+      "scissorEndX": {
+        "owner": "lj",
+        "name": "aq",
+        "desc": "I"
+      },
+      "scissorEndY": {
+        "owner": "lj",
+        "name": "au",
+        "desc": "I"
+      },
+      "graphicsPixels": {
+        "owner": "lj",
+        "name": "av",
+        "desc": "[I"
+      },
+      "viewportX": {
+        "owner": "client",
+        "name": "ln",
+        "desc": "I",
+        "multiplier": 981856147
+      },
+      "viewportY": {
+        "owner": "client",
+        "name": "lr",
+        "desc": "I",
+        "multiplier": -1679083747
+      },
+      "viewportWidget": {
+        "owner": "client",
+        "name": "mc",
+        "desc": "Lha;"
+      },
+      "colorPalette": {
+        "owner": "et",
+        "name": "h",
+        "desc": "[I"
+      },
+      "textureProvider": {
+        "owner": "s",
+        "name": "je",
+        "desc": "Ldt;"
+      }
+    },
+    "methods": {
+      "fillRectangle": {
+        "owner": "lj",
+        "name": "dg",
+        "desc": "(IIIII)V"
+      },
+      "fillRectangleAlpha": {
+        "owner": "lj",
+        "name": "dr",
+        "desc": "(IIIIII)V"
+      },
+      "drawHorizontalLine": {
+        "owner": "lj",
+        "name": "db",
+        "desc": "(IIII)V"
+      },
+      "drawHorizontalLineAlpha": {
+        "owner": "lj",
+        "name": "dn",
+        "desc": "(IIIII)V"
+      },
+      "drawVerticalLine": {
+        "owner": "lj",
+        "name": "dt",
+        "desc": "(IIII)V"
+      },
+      "drawVerticalLineAlpha": {
+        "owner": "lj",
+        "name": "dc",
+        "desc": "(IIIII)V"
+      },
+      "drawGlyphShadow": {
+        "owner": "kn",
+        "name": "aq",
+        "desc": "([BIIIII)V"
+      },
+      "drawGlyphAlphaShadow": {
+        "owner": "kn",
+        "name": "an",
+        "desc": "([BIIIIII)V"
+      }
+    }
+  },
+  "classes": {
+    "GameEngine": {
+      "name": "bj",
+      "fields": {
+        "canvas": {
+          "name": "ah",
+          "desc": "Ljava/awt/Canvas;"
+        },
+        "clipboard": {
+          "name": "ae",
+          "desc": "Ljava/awt/datatransfer/Clipboard;"
+        },
+        "replaceCanvasNextFrame": {
+          "name": "az",
+          "desc": "Z"
+        }
+      },
+      "methods": {
+        "post": {
+          "name": "d",
+          "desc": "(Ljava/lang/Object;B)V",
+          "dummyValue": -24
+        },
+        "setupClipboard": {
+          "name": "o",
+          "desc": "(I)V",
+          "dummyValue": -2116975887
+        },
+        "setClipboardContents": {
+          "name": "l",
+          "desc": "(Ljava/lang/String;S)V",
+          "dummyValue": -9007
+        }
+      }
+    },
+    "Client": {
+      "name": "client",
+      "fields": {},
+      "methods": {}
+    },
+    "BufferProvider": {
+      "name": "lk",
+      "fields": {
+        "pixels": {
+          "name": "y",
+          "desc": "[I"
+        }
+      },
+      "methods": {
+        "setRaster": {
+          "name": "h",
+          "desc": "(I)V",
+          "dummyValue": 1390931728
+        }
+      }
+    },
+    "MainBufferProvider": {
+      "name": "ab",
+      "fields": {
+        "image": {
+          "name": "i",
+          "desc": "Ljava/awt/Image;"
+        }
+      },
+      "methods": {}
+    },
+    "Timer": {
+      "name": "fc",
+      "fields": {},
+      "methods": {}
+    },
+    "NanoTimer": {
+      "name": "fn",
+      "fields": {},
+      "methods": {
+        "sleep": {
+          "name": "i",
+          "desc": "(III)I",
+          "dummyValue": 670539248
+        }
+      }
+    },
+    "Model": {
+      "name": "dw",
+      "fields": {
+        "vertexCount": {
+          "name": "p",
+          "desc": "I"
+        },
+        "verticesX": {
+          "name": "b",
+          "desc": "[I"
+        },
+        "verticesY": {
+          "name": "e",
+          "desc": "[I"
+        },
+        "verticesZ": {
+          "name": "x",
+          "desc": "[I"
+        },
+        "triangleCount": {
+          "name": "a",
+          "desc": "I"
+        },
+        "indicesA": {
+          "name": "d",
+          "desc": "[I"
+        },
+        "indicesB": {
+          "name": "c",
+          "desc": "[I"
+        },
+        "indicesC": {
+          "name": "o",
+          "desc": "[I"
+        },
+        "colorsA": {
+          "name": "v",
+          "desc": "[I"
+        },
+        "colorsB": {
+          "name": "k",
+          "desc": "[I"
+        },
+        "colorsC": {
+          "name": "s",
+          "desc": "[I"
+        },
+        "textureIndicesP": {
+          "name": "h",
+          "desc": "[I"
+        },
+        "textureIndicesM": {
+          "name": "m",
+          "desc": "[I"
+        },
+        "textureIndicesN": {
+          "name": "g",
+          "desc": "[I"
+        },
+        "triangleTextures": {
+          "name": "n",
+          "desc": "[S"
+        },
+        "textureMapping": {
+          "name": "j",
+          "desc": "[B"
+        },
+        "triangleAlphas": {
+          "name": "t",
+          "desc": "[B"
+        },
+        "trianglePriorities": {
+          "name": "l",
+          "desc": "[B"
+        }
+      },
+      "methods": {
+        "draw": {
+          "name": "ch",
+          "desc": "(IIIIIIIIJ)V"
+        },
+        "drawFrustum": {
+          "name": "m",
+          "desc": "(IIIIIII)V"
+        },
+        "drawOrtho": {
+          "name": "aa",
+          "desc": "(IIIIIIII)V"
+        },
+        "drawTriangle": {
+          "name": "aw",
+          "desc": "(I)V"
+        }
+      }
+    },
+    "Sprite": {
+      "name": "ls",
+      "fields": {
+        "pixels": {
+          "name": "f",
+          "desc": "[I"
+        },
+        "width": {
+          "name": "i",
+          "desc": "I"
+        },
+        "height": {
+          "name": "y",
+          "desc": "I"
+        },
+        "offsetX": {
+          "name": "w",
+          "desc": "I"
+        },
+        "offsetY": {
+          "name": "p",
+          "desc": "I"
+        },
+        "maxWidth": {
+          "name": "b",
+          "desc": "I"
+        },
+        "maxHeight": {
+          "name": "e",
+          "desc": "I"
+        }
+      },
+      "methods": {
+        "draw": {
+          "name": "o",
+          "desc": "(II)V"
+        },
+        "drawAlpha": {
+          "name": "z",
+          "desc": "(III)V"
+        },
+        "drawScaled": {
+          "name": "t",
+          "desc": "(IIII)V"
+        },
+        "drawScaledAlpha": {
+          "name": "m",
+          "desc": "(IIIII)V"
+        },
+        "drawFast": {
+          "name": "d",
+          "desc": "(II)V"
+        },
+        "drawFastScaled": {
+          "name": "ay",
+          "desc": "(IIII)V"
+        },
+        "drawColor": {
+          "name": "n",
+          "desc": "(IIII)V"
+        }
+      }
+    },
+    "AbstractFont": {
+      "name": "kn",
+      "fields": {
+        "glyphs": {
+          "name": "f",
+          "desc": "[[B"
+        },
+        "glyphWidths": {
+          "name": "y",
+          "desc": "[I"
+        },
+        "glyphHeights": {
+          "name": "w",
+          "desc": "[I"
+        }
+      },
+      "methods": {
+        "drawText": {
+          "name": "au",
+          "desc": "(Ljava/lang/String;II)V"
+        },
+        "drawMouseoverText": {
+          "name": "ah",
+          "desc": "(Ljava/lang/String;II[I[I)V"
+        }
+      }
+    },
+    "Font": {
+      "name": "dev.dennis.osfx.inject.impl.FontImpl",
+      "fields": {},
+      "methods": {
+        "drawGlyph": {
+          "name": "f",
+          "desc": "([BIIIII)V"
+        },
+        "drawGlyphAlpha": {
+          "name": "i",
+          "desc": "([BIIIIII)V"
+        }
+      }
+    },
+    "IndexedSprite": {
+      "name": "li",
+      "fields": {
+        "pixels": {
+          "name": "f",
+          "desc": "[B"
+        },
+        "palette": {
+          "name": "i",
+          "desc": "[I"
+        },
+        "width": {
+          "name": "y",
+          "desc": "I"
+        },
+        "height": {
+          "name": "w",
+          "desc": "I"
+        },
+        "offsetX": {
+          "name": "p",
+          "desc": "I"
+        },
+        "offsetY": {
+          "name": "b",
+          "desc": "I"
+        },
+        "maxWidth": {
+          "name": "e",
+          "desc": "I"
+        },
+        "maxHeight": {
+          "name": "x",
+          "desc": "I"
+        }
+      },
+      "methods": {
+        "draw": {
+          "name": "y",
+          "desc": "(II)V"
+        },
+        "drawScaled": {
+          "name": "p",
+          "desc": "(IIII)V"
+        }
+      }
+    },
+    "Widget": {
+      "name": "ha",
+      "fields": {
+        "width": {
+          "name": "aq",
+          "desc": "I",
+          "multiplier": 372029795
+        },
+        "height": {
+          "name": "ao",
+          "desc": "I",
+          "multiplier": -1882269787
+        }
+      },
+      "methods": {}
+    },
+    "Scene": {
+      "name": "ej",
+      "fields": {
+        "tiles": {
+          "name": "b",
+          "desc": "[[[Ldy;"
+        },
+        "tileHeights": {
+          "name": "p",
+          "desc": "[[[I"
+        }
+      },
+      "methods": {
+        "draw": {
+          "name": "af",
+          "desc": "(IIIIII)V"
+        },
+        "drawTileUnderlay": {
+          "name": "ai",
+          "desc": "(Lef;IIIIIII)V"
+        },
+        "drawTileOverlay": {
+          "name": "am",
+          "desc": "(Ldv;IIIIII)V"
+        }
+      }
+    },
+    "Texture": {
+      "name": "dq",
+      "fields": {
+        "pixels": {
+          "name": "v",
+          "desc": "[I"
+        },
+        "loaded": {
+          "name": "k",
+          "desc": "Z"
+        }
+      },
+      "methods": {}
+    },
+    "TextureProvider": {
+      "name": "dt",
+      "fields": {
+        "textures": {
+          "name": "f",
+          "desc": "[Ldq;"
+        }
+      },
+      "methods": {
+        "load": {
+          "name": "y",
+          "desc": "(IS)[I",
+          "dummyValue": -13601
+        }
+      }
+    },
+    "SceneTilePaint": {
+      "name": "ef",
+      "fields": {
+        "swColor": {
+          "name": "f",
+          "desc": "I",
+          "multiplier": 4463315
+        },
+        "seColor": {
+          "name": "i",
+          "desc": "I",
+          "multiplier": 404094577
+        },
+        "neColor": {
+          "name": "y",
+          "desc": "I",
+          "multiplier": -1273471255
+        },
+        "nwColor": {
+          "name": "w",
+          "desc": "I",
+          "multiplier": -1327164447
+        },
+        "textureId": {
+          "name": "p",
+          "desc": "I",
+          "multiplier": 111176121
+        },
+        "rgb": {
+          "name": "e",
+          "desc": "I",
+          "multiplier": -387555393
+        }
+      },
+      "methods": {}
+    },
+    "SceneTileModel": {
+      "name": "dv",
+      "fields": {
+        "verticesX": {
+          "name": "f",
+          "desc": "[I"
+        },
+        "verticesY": {
+          "name": "i",
+          "desc": "[I"
+        },
+        "verticesZ": {
+          "name": "y",
+          "desc": "[I"
+        },
+        "colorsA": {
+          "name": "w",
+          "desc": "[I"
+        },
+        "colorsB": {
+          "name": "p",
+          "desc": "[I"
+        },
+        "colorsC": {
+          "name": "b",
+          "desc": "[I"
+        },
+        "indicesA": {
+          "name": "e",
+          "desc": "[I"
+        },
+        "indicesB": {
+          "name": "x",
+          "desc": "[I"
+        },
+        "indicesC": {
+          "name": "a",
+          "desc": "[I"
+        },
+        "textureIds": {
+          "name": "d",
+          "desc": "[I"
+        }
+      },
+      "methods": {}
+    },
+    "Tile": {
+      "name": "dy",
+      "fields": {},
+      "methods": {}
+    }
+  }
+}
